@@ -1,0 +1,659 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BD5E6238B87BFCF9505EF09F /* Pods_OpenCVSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BB89B8EE761339069054B24 /* Pods_OpenCVSwift.framework */; };
+		CE5F07CB1E25783500BA0206 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE5F07CA1E25783500BA0206 /* Assets.xcassets */; };
+		CE5F07CE1E25783500BA0206 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5F07CC1E25783500BA0206 /* LaunchScreen.storyboard */; };
+		CE5F07D91E25783500BA0206 /* OpenCVSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F07D81E25783500BA0206 /* OpenCVSwiftTests.swift */; };
+		CE5F07E41E25783500BA0206 /* OpenCVSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F07E31E25783500BA0206 /* OpenCVSwiftUITests.swift */; };
+		CE5F07F31E2578A200BA0206 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE5F07F21E2578A200BA0206 /* CoreGraphics.framework */; };
+		CE5F07F71E257C3A00BA0206 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE5F07F61E257C3A00BA0206 /* AudioToolbox.framework */; };
+		CE5F07FF1E259FF200BA0206 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE5F07FE1E259FF200BA0206 /* CoreVideo.framework */; };
+		CE87B94E1E26F4DB0022D8C3 /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE87B94D1E26F4DB0022D8C3 /* OpenCVWrapper.mm */; };
+		CE87B9521E26F4EF0022D8C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87B94F1E26F4EF0022D8C3 /* AppDelegate.swift */; };
+		CE87B9531E26F4EF0022D8C3 /* VideoSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87B9501E26F4EF0022D8C3 /* VideoSource.swift */; };
+		CE87B9541E26F4EF0022D8C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87B9511E26F4EF0022D8C3 /* ViewController.swift */; };
+		CE87B9571E26F5030022D8C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE87B9551E26F5030022D8C3 /* Main.storyboard */; };
+		CE87B9591E26F52D0022D8C3 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = CE87B9581E26F52D0022D8C3 /* Podfile */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CE5F07D51E25783500BA0206 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE5F07B81E25783500BA0206 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE5F07BF1E25783500BA0206;
+			remoteInfo = OpenCVSwift;
+		};
+		CE5F07E01E25783500BA0206 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE5F07B81E25783500BA0206 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE5F07BF1E25783500BA0206;
+			remoteInfo = OpenCVSwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3EADF72A97F666BE92BE3FB2 /* Pods-OpenCVSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenCVSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpenCVSwift/Pods-OpenCVSwift.release.xcconfig"; sourceTree = "<group>"; };
+		8BB89B8EE761339069054B24 /* Pods_OpenCVSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenCVSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE5F07C01E25783500BA0206 /* OpenCVSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenCVSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE5F07CA1E25783500BA0206 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE5F07CD1E25783500BA0206 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CE5F07CF1E25783500BA0206 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE5F07D41E25783500BA0206 /* OpenCVSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenCVSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE5F07D81E25783500BA0206 /* OpenCVSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCVSwiftTests.swift; sourceTree = "<group>"; };
+		CE5F07DA1E25783500BA0206 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE5F07DF1E25783500BA0206 /* OpenCVSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenCVSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE5F07E31E25783500BA0206 /* OpenCVSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCVSwiftUITests.swift; sourceTree = "<group>"; };
+		CE5F07E51E25783500BA0206 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE5F07F21E2578A200BA0206 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CE5F07F61E257C3A00BA0206 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		CE5F07FE1E259FF200BA0206 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		CE87B94B1E26F4DB0022D8C3 /* OpenCVSwift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "OpenCVSwift-Bridging-Header.h"; path = "OpenCV/OpenCVSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		CE87B94C1E26F4DB0022D8C3 /* OpenCVWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenCVWrapper.h; path = OpenCV/OpenCVWrapper.h; sourceTree = "<group>"; };
+		CE87B94D1E26F4DB0022D8C3 /* OpenCVWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = OpenCVWrapper.mm; path = OpenCV/OpenCVWrapper.mm; sourceTree = "<group>"; };
+		CE87B94F1E26F4EF0022D8C3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CE87B9501E26F4EF0022D8C3 /* VideoSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoSource.swift; sourceTree = "<group>"; };
+		CE87B9511E26F4EF0022D8C3 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CE87B9561E26F5030022D8C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CE87B9581E26F52D0022D8C3 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		E158D985DD7B9E5B53BF8166 /* Pods-OpenCVSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenCVSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OpenCVSwift/Pods-OpenCVSwift.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CE5F07BD1E25783500BA0206 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE5F07FF1E259FF200BA0206 /* CoreVideo.framework in Frameworks */,
+				CE5F07F71E257C3A00BA0206 /* AudioToolbox.framework in Frameworks */,
+				CE5F07F31E2578A200BA0206 /* CoreGraphics.framework in Frameworks */,
+				BD5E6238B87BFCF9505EF09F /* Pods_OpenCVSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE5F07D11E25783500BA0206 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE5F07DC1E25783500BA0206 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7C7797B4188711A4DB89473A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E158D985DD7B9E5B53BF8166 /* Pods-OpenCVSwift.debug.xcconfig */,
+				3EADF72A97F666BE92BE3FB2 /* Pods-OpenCVSwift.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CE5F07B71E25783500BA0206 = {
+			isa = PBXGroup;
+			children = (
+				CE87B9581E26F52D0022D8C3 /* Podfile */,
+				CE5F07C21E25783500BA0206 /* OpenCVSwift */,
+				CE5F07D71E25783500BA0206 /* OpenCVSwiftTests */,
+				CE5F07E21E25783500BA0206 /* OpenCVSwiftUITests */,
+				CE5F07C11E25783500BA0206 /* Products */,
+				CE5F07F11E2578A200BA0206 /* Frameworks */,
+				7C7797B4188711A4DB89473A /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		CE5F07C11E25783500BA0206 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE5F07C01E25783500BA0206 /* OpenCVSwift.app */,
+				CE5F07D41E25783500BA0206 /* OpenCVSwiftTests.xctest */,
+				CE5F07DF1E25783500BA0206 /* OpenCVSwiftUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE5F07C21E25783500BA0206 /* OpenCVSwift */ = {
+			isa = PBXGroup;
+			children = (
+				CE87B9551E26F5030022D8C3 /* Main.storyboard */,
+				CE87B94F1E26F4EF0022D8C3 /* AppDelegate.swift */,
+				CE87B9501E26F4EF0022D8C3 /* VideoSource.swift */,
+				CE87B9511E26F4EF0022D8C3 /* ViewController.swift */,
+				CE5F07CA1E25783500BA0206 /* Assets.xcassets */,
+				CE5F07CC1E25783500BA0206 /* LaunchScreen.storyboard */,
+				CE5F07CF1E25783500BA0206 /* Info.plist */,
+				CE87B9481E25CB600022D8C3 /* OpenCV */,
+			);
+			path = OpenCVSwift;
+			sourceTree = "<group>";
+		};
+		CE5F07D71E25783500BA0206 /* OpenCVSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				CE5F07D81E25783500BA0206 /* OpenCVSwiftTests.swift */,
+				CE5F07DA1E25783500BA0206 /* Info.plist */,
+			);
+			path = OpenCVSwiftTests;
+			sourceTree = "<group>";
+		};
+		CE5F07E21E25783500BA0206 /* OpenCVSwiftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CE5F07E31E25783500BA0206 /* OpenCVSwiftUITests.swift */,
+				CE5F07E51E25783500BA0206 /* Info.plist */,
+			);
+			path = OpenCVSwiftUITests;
+			sourceTree = "<group>";
+		};
+		CE5F07F11E2578A200BA0206 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE5F07FE1E259FF200BA0206 /* CoreVideo.framework */,
+				CE5F07F61E257C3A00BA0206 /* AudioToolbox.framework */,
+				CE5F07F21E2578A200BA0206 /* CoreGraphics.framework */,
+				8BB89B8EE761339069054B24 /* Pods_OpenCVSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE87B9481E25CB600022D8C3 /* OpenCV */ = {
+			isa = PBXGroup;
+			children = (
+				CE87B94B1E26F4DB0022D8C3 /* OpenCVSwift-Bridging-Header.h */,
+				CE87B94C1E26F4DB0022D8C3 /* OpenCVWrapper.h */,
+				CE87B94D1E26F4DB0022D8C3 /* OpenCVWrapper.mm */,
+			);
+			name = OpenCV;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CE5F07BF1E25783500BA0206 /* OpenCVSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE5F07E81E25783500BA0206 /* Build configuration list for PBXNativeTarget "OpenCVSwift" */;
+			buildPhases = (
+				1B2553BD7632202A658933AE /* [CP] Check Pods Manifest.lock */,
+				CE5F07BC1E25783500BA0206 /* Sources */,
+				CE5F07BD1E25783500BA0206 /* Frameworks */,
+				CE5F07BE1E25783500BA0206 /* Resources */,
+				30BE65F5514540ED4BF71FF1 /* [CP] Embed Pods Frameworks */,
+				2C7D1AE7BC5BFC2B1055A3A9 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OpenCVSwift;
+			productName = OpenCVSwift;
+			productReference = CE5F07C01E25783500BA0206 /* OpenCVSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CE5F07D31E25783500BA0206 /* OpenCVSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE5F07EB1E25783500BA0206 /* Build configuration list for PBXNativeTarget "OpenCVSwiftTests" */;
+			buildPhases = (
+				CE5F07D01E25783500BA0206 /* Sources */,
+				CE5F07D11E25783500BA0206 /* Frameworks */,
+				CE5F07D21E25783500BA0206 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE5F07D61E25783500BA0206 /* PBXTargetDependency */,
+			);
+			name = OpenCVSwiftTests;
+			productName = OpenCVSwiftTests;
+			productReference = CE5F07D41E25783500BA0206 /* OpenCVSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CE5F07DE1E25783500BA0206 /* OpenCVSwiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE5F07EE1E25783500BA0206 /* Build configuration list for PBXNativeTarget "OpenCVSwiftUITests" */;
+			buildPhases = (
+				CE5F07DB1E25783500BA0206 /* Sources */,
+				CE5F07DC1E25783500BA0206 /* Frameworks */,
+				CE5F07DD1E25783500BA0206 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE5F07E11E25783500BA0206 /* PBXTargetDependency */,
+			);
+			name = OpenCVSwiftUITests;
+			productName = OpenCVSwiftUITests;
+			productReference = CE5F07DF1E25783500BA0206 /* OpenCVSwiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CE5F07B81E25783500BA0206 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = someCompanyNameHere;
+				TargetAttributes = {
+					CE5F07BF1E25783500BA0206 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = S264RF7436;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+					};
+					CE5F07D31E25783500BA0206 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = S264RF7436;
+						ProvisioningStyle = Automatic;
+						TestTargetID = CE5F07BF1E25783500BA0206;
+					};
+					CE5F07DE1E25783500BA0206 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = S264RF7436;
+						ProvisioningStyle = Automatic;
+						TestTargetID = CE5F07BF1E25783500BA0206;
+					};
+				};
+			};
+			buildConfigurationList = CE5F07BB1E25783500BA0206 /* Build configuration list for PBXProject "OpenCVSwift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CE5F07B71E25783500BA0206;
+			productRefGroup = CE5F07C11E25783500BA0206 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CE5F07BF1E25783500BA0206 /* OpenCVSwift */,
+				CE5F07D31E25783500BA0206 /* OpenCVSwiftTests */,
+				CE5F07DE1E25783500BA0206 /* OpenCVSwiftUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CE5F07BE1E25783500BA0206 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE5F07CE1E25783500BA0206 /* LaunchScreen.storyboard in Resources */,
+				CE5F07CB1E25783500BA0206 /* Assets.xcassets in Resources */,
+				CE87B9591E26F52D0022D8C3 /* Podfile in Resources */,
+				CE87B9571E26F5030022D8C3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE5F07D21E25783500BA0206 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE5F07DD1E25783500BA0206 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1B2553BD7632202A658933AE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2C7D1AE7BC5BFC2B1055A3A9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OpenCVSwift/Pods-OpenCVSwift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		30BE65F5514540ED4BF71FF1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OpenCVSwift/Pods-OpenCVSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CE5F07BC1E25783500BA0206 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE87B9521E26F4EF0022D8C3 /* AppDelegate.swift in Sources */,
+				CE87B94E1E26F4DB0022D8C3 /* OpenCVWrapper.mm in Sources */,
+				CE87B9541E26F4EF0022D8C3 /* ViewController.swift in Sources */,
+				CE87B9531E26F4EF0022D8C3 /* VideoSource.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE5F07D01E25783500BA0206 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE5F07D91E25783500BA0206 /* OpenCVSwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE5F07DB1E25783500BA0206 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE5F07E41E25783500BA0206 /* OpenCVSwiftUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CE5F07D61E25783500BA0206 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE5F07BF1E25783500BA0206 /* OpenCVSwift */;
+			targetProxy = CE5F07D51E25783500BA0206 /* PBXContainerItemProxy */;
+		};
+		CE5F07E11E25783500BA0206 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE5F07BF1E25783500BA0206 /* OpenCVSwift */;
+			targetProxy = CE5F07E01E25783500BA0206 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CE5F07CC1E25783500BA0206 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE5F07CD1E25783500BA0206 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		CE87B9551E26F5030022D8C3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE87B9561E26F5030022D8C3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CE5F07E61E25783500BA0206 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CE5F07E71E25783500BA0206 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CE5F07E91E25783500BA0206 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E158D985DD7B9E5B53BF8166 /* Pods-OpenCVSwift.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = S264RF7436;
+				INFOPLIST_FILE = OpenCVSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.someCompanyNameHere.OpenCVSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OpenCVSwift/OpenCVSwift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		CE5F07EA1E25783500BA0206 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3EADF72A97F666BE92BE3FB2 /* Pods-OpenCVSwift.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = S264RF7436;
+				INFOPLIST_FILE = OpenCVSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.someCompanyNameHere.OpenCVSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OpenCVSwift/OpenCVSwift-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		CE5F07EC1E25783500BA0206 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = S264RF7436;
+				INFOPLIST_FILE = OpenCVSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.someCompanyNameHere.OpenCVSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenCVSwift.app/OpenCVSwift";
+			};
+			name = Debug;
+		};
+		CE5F07ED1E25783500BA0206 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = S264RF7436;
+				INFOPLIST_FILE = OpenCVSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.someCompanyNameHere.OpenCVSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenCVSwift.app/OpenCVSwift";
+			};
+			name = Release;
+		};
+		CE5F07EF1E25783500BA0206 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = S264RF7436;
+				INFOPLIST_FILE = OpenCVSwiftUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.someCompanyNameHere.OpenCVSwiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = OpenCVSwift;
+			};
+			name = Debug;
+		};
+		CE5F07F01E25783500BA0206 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = S264RF7436;
+				INFOPLIST_FILE = OpenCVSwiftUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.someCompanyNameHere.OpenCVSwiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = OpenCVSwift;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CE5F07BB1E25783500BA0206 /* Build configuration list for PBXProject "OpenCVSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE5F07E61E25783500BA0206 /* Debug */,
+				CE5F07E71E25783500BA0206 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE5F07E81E25783500BA0206 /* Build configuration list for PBXNativeTarget "OpenCVSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE5F07E91E25783500BA0206 /* Debug */,
+				CE5F07EA1E25783500BA0206 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE5F07EB1E25783500BA0206 /* Build configuration list for PBXNativeTarget "OpenCVSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE5F07EC1E25783500BA0206 /* Debug */,
+				CE5F07ED1E25783500BA0206 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE5F07EE1E25783500BA0206 /* Build configuration list for PBXNativeTarget "OpenCVSwiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE5F07EF1E25783500BA0206 /* Debug */,
+				CE5F07F01E25783500BA0206 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CE5F07B81E25783500BA0206 /* Project object */;
+}
