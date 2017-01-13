@@ -8,19 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		BD5E6238B87BFCF9505EF09F /* Pods_OpenCVSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BB89B8EE761339069054B24 /* Pods_OpenCVSwift.framework */; };
-		CE5F07CB1E25783500BA0206 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE5F07CA1E25783500BA0206 /* Assets.xcassets */; };
+		CE31D8D81E283C1300708575 /* GROBOLD.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE31D8D71E283C1300708575 /* GROBOLD.ttf */; };
+		CE31D8E01E28495B00708575 /* SpriteLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE31D8DF1E28495B00708575 /* SpriteLayer.swift */; };
+		CE31D8E21E296F7400708575 /* laser.caf in Resources */ = {isa = PBXBuildFile; fileRef = CE31D8DA1E283C2200708575 /* laser.caf */; };
+		CE31D8E31E296F7E00708575 /* explosion.caf in Resources */ = {isa = PBXBuildFile; fileRef = CE31D8D91E283C2200708575 /* explosion.caf */; };
+		CE31D8E41E296F8300708575 /* powerup.caf in Resources */ = {isa = PBXBuildFile; fileRef = CE31D8DB1E283C2200708575 /* powerup.caf */; };
+		CE31D8E71E297D2400708575 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE5F07F61E257C3A00BA0206 /* AudioToolbox.framework */; };
+		CE31D8EB1E29879800708575 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE31D8EA1E29879800708575 /* Assets.xcassets */; };
+		CE4534931E27438500D719E3 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4534921E27438500D719E3 /* UIViewExtensions.swift */; };
+		CE4534961E275C9E00D719E3 /* AccelerationAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4534951E275C9E00D719E3 /* AccelerationAnimation.swift */; };
+		CE4534981E27616B00D719E3 /* Evaluate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4534971E27616B00D719E3 /* Evaluate.swift */; };
 		CE5F07CE1E25783500BA0206 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5F07CC1E25783500BA0206 /* LaunchScreen.storyboard */; };
 		CE5F07D91E25783500BA0206 /* OpenCVSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F07D81E25783500BA0206 /* OpenCVSwiftTests.swift */; };
 		CE5F07E41E25783500BA0206 /* OpenCVSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F07E31E25783500BA0206 /* OpenCVSwiftUITests.swift */; };
 		CE5F07F31E2578A200BA0206 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE5F07F21E2578A200BA0206 /* CoreGraphics.framework */; };
-		CE5F07F71E257C3A00BA0206 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE5F07F61E257C3A00BA0206 /* AudioToolbox.framework */; };
 		CE5F07FF1E259FF200BA0206 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE5F07FE1E259FF200BA0206 /* CoreVideo.framework */; };
 		CE87B94E1E26F4DB0022D8C3 /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE87B94D1E26F4DB0022D8C3 /* OpenCVWrapper.mm */; };
 		CE87B9521E26F4EF0022D8C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87B94F1E26F4EF0022D8C3 /* AppDelegate.swift */; };
-		CE87B9531E26F4EF0022D8C3 /* VideoSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87B9501E26F4EF0022D8C3 /* VideoSource.swift */; };
-		CE87B9541E26F4EF0022D8C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87B9511E26F4EF0022D8C3 /* ViewController.swift */; };
 		CE87B9571E26F5030022D8C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE87B9551E26F5030022D8C3 /* Main.storyboard */; };
 		CE87B9591E26F52D0022D8C3 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = CE87B9581E26F52D0022D8C3 /* Podfile */; };
+		CE930C4E1E27082100161956 /* VideoSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE930C4D1E27082100161956 /* VideoSource.swift */; };
+		CE930C501E27084E00161956 /* GameViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE930C4F1E27084E00161956 /* GameViewControllerExtensions.swift */; };
+		CE930C551E27147200161956 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE930C541E27147200161956 /* GameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,8 +52,17 @@
 /* Begin PBXFileReference section */
 		3EADF72A97F666BE92BE3FB2 /* Pods-OpenCVSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenCVSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpenCVSwift/Pods-OpenCVSwift.release.xcconfig"; sourceTree = "<group>"; };
 		8BB89B8EE761339069054B24 /* Pods_OpenCVSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenCVSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE31D8D71E283C1300708575 /* GROBOLD.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = GROBOLD.ttf; path = Multimedia/Fonts/GROBOLD.ttf; sourceTree = "<group>"; };
+		CE31D8D91E283C2200708575 /* explosion.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = explosion.caf; path = Multimedia/Sounds/explosion.caf; sourceTree = "<group>"; };
+		CE31D8DA1E283C2200708575 /* laser.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = laser.caf; path = Multimedia/Sounds/laser.caf; sourceTree = "<group>"; };
+		CE31D8DB1E283C2200708575 /* powerup.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = powerup.caf; path = Multimedia/Sounds/powerup.caf; sourceTree = "<group>"; };
+		CE31D8DF1E28495B00708575 /* SpriteLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpriteLayer.swift; path = Sprites/SpriteLayer.swift; sourceTree = "<group>"; };
+		CE31D8E51E297CD000708575 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		CE31D8EA1E29879800708575 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE4534921E27438500D719E3 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewExtensions.swift; path = Extensions/UIViewExtensions.swift; sourceTree = "<group>"; };
+		CE4534951E275C9E00D719E3 /* AccelerationAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccelerationAnimation.swift; path = Animations/AccelerationAnimation.swift; sourceTree = "<group>"; };
+		CE4534971E27616B00D719E3 /* Evaluate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Evaluate.swift; path = Animations/Evaluate.swift; sourceTree = "<group>"; };
 		CE5F07C01E25783500BA0206 /* OpenCVSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenCVSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE5F07CA1E25783500BA0206 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE5F07CD1E25783500BA0206 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE5F07CF1E25783500BA0206 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE5F07D41E25783500BA0206 /* OpenCVSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenCVSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,14 +74,15 @@
 		CE5F07F21E2578A200BA0206 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		CE5F07F61E257C3A00BA0206 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		CE5F07FE1E259FF200BA0206 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
-		CE87B94B1E26F4DB0022D8C3 /* OpenCVSwift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "OpenCVSwift-Bridging-Header.h"; path = "OpenCV/OpenCVSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		CE87B94C1E26F4DB0022D8C3 /* OpenCVWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenCVWrapper.h; path = OpenCV/OpenCVWrapper.h; sourceTree = "<group>"; };
 		CE87B94D1E26F4DB0022D8C3 /* OpenCVWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = OpenCVWrapper.mm; path = OpenCV/OpenCVWrapper.mm; sourceTree = "<group>"; };
 		CE87B94F1E26F4EF0022D8C3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CE87B9501E26F4EF0022D8C3 /* VideoSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoSource.swift; sourceTree = "<group>"; };
-		CE87B9511E26F4EF0022D8C3 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CE87B9561E26F5030022D8C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE87B9581E26F52D0022D8C3 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		CE930C491E2705B600161956 /* OpenCVSwift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "OpenCVSwift-Bridging-Header.h"; path = "OpenCV/OpenCVSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		CE930C4D1E27082100161956 /* VideoSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoSource.swift; path = "Video Source/VideoSource.swift"; sourceTree = "<group>"; };
+		CE930C4F1E27084E00161956 /* GameViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameViewControllerExtensions.swift; path = Extensions/GameViewControllerExtensions.swift; sourceTree = "<group>"; };
+		CE930C541E27147200161956 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		E158D985DD7B9E5B53BF8166 /* Pods-OpenCVSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenCVSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OpenCVSwift/Pods-OpenCVSwift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,8 +91,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE31D8E71E297D2400708575 /* AudioToolbox.framework in Frameworks */,
 				CE5F07FF1E259FF200BA0206 /* CoreVideo.framework in Frameworks */,
-				CE5F07F71E257C3A00BA0206 /* AudioToolbox.framework in Frameworks */,
 				CE5F07F31E2578A200BA0206 /* CoreGraphics.framework in Frameworks */,
 				BD5E6238B87BFCF9505EF09F /* Pods_OpenCVSwift.framework in Frameworks */,
 			);
@@ -105,6 +124,50 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		CE31D8E11E28496000708575 /* Sprites */ = {
+			isa = PBXGroup;
+			children = (
+				CE31D8DF1E28495B00708575 /* SpriteLayer.swift */,
+			);
+			name = Sprites;
+			sourceTree = "<group>";
+		};
+		CE4534871E27383F00D719E3 /* Multimedia */ = {
+			isa = PBXGroup;
+			children = (
+				CE4534891E27385400D719E3 /* Sounds */,
+				CE4534881E27384C00D719E3 /* Fonts */,
+			);
+			name = Multimedia;
+			sourceTree = "<group>";
+		};
+		CE4534881E27384C00D719E3 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CE31D8D71E283C1300708575 /* GROBOLD.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		CE4534891E27385400D719E3 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				CE31D8D91E283C2200708575 /* explosion.caf */,
+				CE31D8DA1E283C2200708575 /* laser.caf */,
+				CE31D8DB1E283C2200708575 /* powerup.caf */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
+		CE4534941E275C6C00D719E3 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				CE4534951E275C9E00D719E3 /* AccelerationAnimation.swift */,
+				CE4534971E27616B00D719E3 /* Evaluate.swift */,
+			);
+			name = Animation;
+			sourceTree = "<group>";
+		};
 		CE5F07B71E25783500BA0206 = {
 			isa = PBXGroup;
 			children = (
@@ -131,14 +194,18 @@
 		CE5F07C21E25783500BA0206 /* OpenCVSwift */ = {
 			isa = PBXGroup;
 			children = (
+				CE4534941E275C6C00D719E3 /* Animation */,
+				CE4534871E27383F00D719E3 /* Multimedia */,
+				CE31D8E11E28496000708575 /* Sprites */,
+				CE930C4C1E2706C700161956 /* Video Source */,
+				CE87B9481E25CB600022D8C3 /* OpenCV */,
 				CE87B9551E26F5030022D8C3 /* Main.storyboard */,
 				CE87B94F1E26F4EF0022D8C3 /* AppDelegate.swift */,
-				CE87B9501E26F4EF0022D8C3 /* VideoSource.swift */,
-				CE87B9511E26F4EF0022D8C3 /* ViewController.swift */,
-				CE5F07CA1E25783500BA0206 /* Assets.xcassets */,
+				CE930C541E27147200161956 /* GameViewController.swift */,
 				CE5F07CC1E25783500BA0206 /* LaunchScreen.storyboard */,
 				CE5F07CF1E25783500BA0206 /* Info.plist */,
-				CE87B9481E25CB600022D8C3 /* OpenCV */,
+				CE31D8EA1E29879800708575 /* Assets.xcassets */,
+				CE930C511E27085400161956 /* Extensions */,
 			);
 			path = OpenCVSwift;
 			sourceTree = "<group>";
@@ -164,6 +231,7 @@
 		CE5F07F11E2578A200BA0206 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE31D8E51E297CD000708575 /* CoreAudio.framework */,
 				CE5F07FE1E259FF200BA0206 /* CoreVideo.framework */,
 				CE5F07F61E257C3A00BA0206 /* AudioToolbox.framework */,
 				CE5F07F21E2578A200BA0206 /* CoreGraphics.framework */,
@@ -175,11 +243,28 @@
 		CE87B9481E25CB600022D8C3 /* OpenCV */ = {
 			isa = PBXGroup;
 			children = (
-				CE87B94B1E26F4DB0022D8C3 /* OpenCVSwift-Bridging-Header.h */,
+				CE930C491E2705B600161956 /* OpenCVSwift-Bridging-Header.h */,
 				CE87B94C1E26F4DB0022D8C3 /* OpenCVWrapper.h */,
 				CE87B94D1E26F4DB0022D8C3 /* OpenCVWrapper.mm */,
 			);
 			name = OpenCV;
+			sourceTree = "<group>";
+		};
+		CE930C4C1E2706C700161956 /* Video Source */ = {
+			isa = PBXGroup;
+			children = (
+				CE930C4D1E27082100161956 /* VideoSource.swift */,
+			);
+			name = "Video Source";
+			sourceTree = "<group>";
+		};
+		CE930C511E27085400161956 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CE930C4F1E27084E00161956 /* GameViewControllerExtensions.swift */,
+				CE4534921E27438500D719E3 /* UIViewExtensions.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,9 +381,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE31D8E41E296F8300708575 /* powerup.caf in Resources */,
+				CE31D8E31E296F7E00708575 /* explosion.caf in Resources */,
+				CE31D8E21E296F7400708575 /* laser.caf in Resources */,
+				CE31D8D81E283C1300708575 /* GROBOLD.ttf in Resources */,
 				CE5F07CE1E25783500BA0206 /* LaunchScreen.storyboard in Resources */,
-				CE5F07CB1E25783500BA0206 /* Assets.xcassets in Resources */,
 				CE87B9591E26F52D0022D8C3 /* Podfile in Resources */,
+				CE31D8EB1E29879800708575 /* Assets.xcassets in Resources */,
 				CE87B9571E26F5030022D8C3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,10 +461,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE31D8E01E28495B00708575 /* SpriteLayer.swift in Sources */,
+				CE4534961E275C9E00D719E3 /* AccelerationAnimation.swift in Sources */,
+				CE930C551E27147200161956 /* GameViewController.swift in Sources */,
+				CE4534981E27616B00D719E3 /* Evaluate.swift in Sources */,
+				CE4534931E27438500D719E3 /* UIViewExtensions.swift in Sources */,
+				CE930C4E1E27082100161956 /* VideoSource.swift in Sources */,
 				CE87B9521E26F4EF0022D8C3 /* AppDelegate.swift in Sources */,
+				CE930C501E27084E00161956 /* GameViewControllerExtensions.swift in Sources */,
 				CE87B94E1E26F4DB0022D8C3 /* OpenCVWrapper.mm in Sources */,
-				CE87B9541E26F4EF0022D8C3 /* ViewController.swift in Sources */,
-				CE87B9531E26F4EF0022D8C3 /* VideoSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,7 +628,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.someCompanyNameHere.OpenCVSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "OpenCVSwift/OpenCVSwift-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "OpenCVSwift/OpenCV/OpenCVSwift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
