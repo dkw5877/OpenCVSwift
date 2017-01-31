@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BD5E6238B87BFCF9505EF09F /* Pods_OpenCVSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BB89B8EE761339069054B24 /* Pods_OpenCVSwift.framework */; };
+		CE2F9DCA1E3817A700359040 /* PatternDetectorWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE2F9DC91E3817A700359040 /* PatternDetectorWrapper.mm */; };
 		CE31D8D81E283C1300708575 /* GROBOLD.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE31D8D71E283C1300708575 /* GROBOLD.ttf */; };
 		CE31D8E01E28495B00708575 /* SpriteLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE31D8DF1E28495B00708575 /* SpriteLayer.swift */; };
 		CE31D8E21E296F7400708575 /* laser.caf in Resources */ = {isa = PBXBuildFile; fileRef = CE31D8DA1E283C2200708575 /* laser.caf */; };
@@ -52,6 +53,11 @@
 /* Begin PBXFileReference section */
 		3EADF72A97F666BE92BE3FB2 /* Pods-OpenCVSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenCVSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpenCVSwift/Pods-OpenCVSwift.release.xcconfig"; sourceTree = "<group>"; };
 		8BB89B8EE761339069054B24 /* Pods_OpenCVSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenCVSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE0F6E011E36B64800655788 /* PatternDetector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PatternDetector.cpp; path = OpenCV/Detector/PatternDetector.cpp; sourceTree = "<group>"; };
+		CE0F6E021E36B64800655788 /* PatternDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PatternDetector.h; path = OpenCV/Detector/PatternDetector.h; sourceTree = "<group>"; };
+		CE2F9DC81E3817A700359040 /* PatternDetectorWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PatternDetectorWrapper.h; path = OpenCV/Detector/PatternDetectorWrapper.h; sourceTree = "<group>"; };
+		CE2F9DC91E3817A700359040 /* PatternDetectorWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = PatternDetectorWrapper.mm; path = OpenCV/Detector/PatternDetectorWrapper.mm; sourceTree = "<group>"; };
+		CE2F9DCB1E38511A00359040 /* CommonDataStructures.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CommonDataStructures.h; path = OpenCV/Detector/CommonDataStructures.h; sourceTree = "<group>"; };
 		CE31D8D71E283C1300708575 /* GROBOLD.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = GROBOLD.ttf; path = Multimedia/Fonts/GROBOLD.ttf; sourceTree = "<group>"; };
 		CE31D8D91E283C2200708575 /* explosion.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = explosion.caf; path = Multimedia/Sounds/explosion.caf; sourceTree = "<group>"; };
 		CE31D8DA1E283C2200708575 /* laser.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = laser.caf; path = Multimedia/Sounds/laser.caf; sourceTree = "<group>"; };
@@ -74,7 +80,7 @@
 		CE5F07F21E2578A200BA0206 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		CE5F07F61E257C3A00BA0206 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		CE5F07FE1E259FF200BA0206 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
-		CE87B94C1E26F4DB0022D8C3 /* OpenCVWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenCVWrapper.h; path = OpenCV/OpenCVWrapper.h; sourceTree = "<group>"; };
+		CE87B94C1E26F4DB0022D8C3 /* OpenCVWrapper.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = OpenCVWrapper.h; path = OpenCV/OpenCVWrapper.h; sourceTree = "<group>"; };
 		CE87B94D1E26F4DB0022D8C3 /* OpenCVWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = OpenCVWrapper.mm; path = OpenCV/OpenCVWrapper.mm; sourceTree = "<group>"; };
 		CE87B94F1E26F4EF0022D8C3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE87B9561E26F5030022D8C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -122,6 +128,18 @@
 				3EADF72A97F666BE92BE3FB2 /* Pods-OpenCVSwift.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		CE0F6E001E36B60200655788 /* Detector */ = {
+			isa = PBXGroup;
+			children = (
+				CE2F9DCB1E38511A00359040 /* CommonDataStructures.h */,
+				CE0F6E021E36B64800655788 /* PatternDetector.h */,
+				CE0F6E011E36B64800655788 /* PatternDetector.cpp */,
+				CE2F9DC81E3817A700359040 /* PatternDetectorWrapper.h */,
+				CE2F9DC91E3817A700359040 /* PatternDetectorWrapper.mm */,
+			);
+			name = Detector;
 			sourceTree = "<group>";
 		};
 		CE31D8E11E28496000708575 /* Sprites */ = {
@@ -199,8 +217,8 @@
 				CE31D8E11E28496000708575 /* Sprites */,
 				CE930C4C1E2706C700161956 /* Video Source */,
 				CE87B9481E25CB600022D8C3 /* OpenCV */,
-				CE87B9551E26F5030022D8C3 /* Main.storyboard */,
 				CE87B94F1E26F4EF0022D8C3 /* AppDelegate.swift */,
+				CE87B9551E26F5030022D8C3 /* Main.storyboard */,
 				CE930C541E27147200161956 /* GameViewController.swift */,
 				CE5F07CC1E25783500BA0206 /* LaunchScreen.storyboard */,
 				CE5F07CF1E25783500BA0206 /* Info.plist */,
@@ -243,6 +261,7 @@
 		CE87B9481E25CB600022D8C3 /* OpenCV */ = {
 			isa = PBXGroup;
 			children = (
+				CE0F6E001E36B60200655788 /* Detector */,
 				CE930C491E2705B600161956 /* OpenCVSwift-Bridging-Header.h */,
 				CE87B94C1E26F4DB0022D8C3 /* OpenCVWrapper.h */,
 				CE87B94D1E26F4DB0022D8C3 /* OpenCVWrapper.mm */,
@@ -469,6 +488,7 @@
 				CE930C4E1E27082100161956 /* VideoSource.swift in Sources */,
 				CE87B9521E26F4EF0022D8C3 /* AppDelegate.swift in Sources */,
 				CE930C501E27084E00161956 /* GameViewControllerExtensions.swift in Sources */,
+				CE2F9DCA1E3817A700359040 /* PatternDetectorWrapper.mm in Sources */,
 				CE87B94E1E26F4DB0022D8C3 /* OpenCVWrapper.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -50,7 +50,7 @@ class GameViewController: UIViewController, VideoSourceDelegate {
     var soundShoot:SystemSoundID = 1
     var soundTracking:SystemSoundID = 2
 
-//    let m_detector:PatternDetector
+    var detector:PatternDetectorWrapper?
     var trackingTimer:Timer?
     var sampleTimer:Timer?
 
@@ -87,6 +87,14 @@ class GameViewController: UIViewController, VideoSourceDelegate {
         configureSamplePanel()
         configureSampleViews()
         loadSounds()
+
+        // Configure Pattern Detector
+        let trackerImage = UIImage(named: "target.jpg")
+        detector = PatternDetectorWrapper(pattern: trackerImage)
+
+        //we have to add the timer to the runloop as dispatching on main thread does not seem to work
+        self.trackingTimer = Timer(timeInterval: 1.0/20.0, target: self, selector: #selector(self.updateTracking(timer:)), userInfo: nil, repeats: true)
+        RunLoop.current.add(self.trackingTimer!, forMode: .commonModes)
     }
 
     func configureViews() {
@@ -167,7 +175,7 @@ class GameViewController: UIViewController, VideoSourceDelegate {
             }
 
             // Start the timer
-            sampleTimer = Timer.scheduledTimer(timeInterval: 1.0/20.0, target: self, selector: #selector(updateSample), userInfo: nil, repeats: true)
+            sampleTimer = Timer.scheduledTimer(timeInterval: 1.0/20.0, target: self, selector: #selector(updateSample(timer:)), userInfo: nil, repeats: true)
 
             samplePanel.popIn { [weak self] _ in
                 self?.transitioningSample = false
@@ -194,12 +202,18 @@ class GameViewController: UIViewController, VideoSourceDelegate {
         AudioServicesPlaySystemSound(soundShoot)
     }
 
-    func updateTracking(timer:Timer) {
-        // TODO: Add code here
+    func updateTracking(timer:Timer?) {
+        if ( detector?.isTracking() )! {
+            print("YES: \(detector?.matchValue())")
+        }
+        else {
+            print("NO: \(detector?.matchValue())")
+        }
     }
 
     func updateSample(timer:Timer?) {
         // TODO: Add code here
+        print("timer \(timer)")
     }
 
     func togglePanels() {
@@ -219,6 +233,8 @@ class GameViewController: UIViewController, VideoSourceDelegate {
                 self?.backgroundImageView.image = image
             }
         }
+
+        detector?.scanFrame(frame as VideoFrame)
     }
 
     func isTutorialPanelVisible() -> Bool {

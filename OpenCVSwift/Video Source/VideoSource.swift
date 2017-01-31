@@ -10,12 +10,13 @@ import UIKit
 import AVFoundation
 import CoreVideo
 
-struct VideoFrame {
-    var width:Int
-    var height:Int
-    var stride:Int
-    var data:UnsafeMutableRawPointer?
-}
+/* defined in a separate header file for use in Swfit, Objc and Cpp classes */
+//struct VideoFrame {
+//    var width:Int
+//    var height:Int
+//    var stride:Int
+//    var data:UnsafeMutableRawPointer?
+//}
 
 protocol VideoSourceDelegate:class {
     func frameReady(frame:VideoFrame)
@@ -99,14 +100,17 @@ class VideoSource:NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
 
         //Lock pixel buffer, option 0 = kCVPixelBufferLock_ReadOnly
         CVPixelBufferLockBaseAddress(pixelBuffer, CVPixelBufferLockFlags(rawValue: 0))
-        let baseAddress = CVPixelBufferGetBaseAddress(pixelBuffer)
-        let width = CVPixelBufferGetWidth(pixelBuffer)
-        let height = CVPixelBufferGetHeight(pixelBuffer)
-        let stride = CVPixelBufferGetBytesPerRow(pixelBuffer)
-        let frame = VideoFrame(width: width, height: height, stride: stride, data: baseAddress)
+        if let baseAddress = CVPixelBufferGetBaseAddress(pixelBuffer) {
+            let rawPointer = OpaquePointer(baseAddress)
+            let pointer = UnsafeMutablePointer<UInt8>(rawPointer)
+            let width = CVPixelBufferGetWidth(pixelBuffer)
+            let height = CVPixelBufferGetHeight(pixelBuffer)
+            let stride = CVPixelBufferGetBytesPerRow(pixelBuffer)
+            let frame = VideoFrame(width: width, height: height, stride: stride, data: pointer)
 
-        //Dispatch VideoFrame to delegate
-        delegate?.frameReady(frame: frame)
+            //Dispatch VideoFrame to delegate
+            delegate?.frameReady(frame: frame)
+        }
 
         /* alernate option is just to create a CIImage and return it back to the delegate */
 //        let image = CIImage(cvPixelBuffer: pixelBuffer)

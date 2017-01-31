@@ -7,9 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface OpenCVWrapper : NSObject
 
 - (void)isThisWorking;
+
+- (UIImage*)toCVMat:(UIImage*)image;
 
 @end
