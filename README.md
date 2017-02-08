@@ -4,4 +4,4 @@ Swift implementation of How To Make An Augmented Reality Target Shooter Game Wit
 # Known Issues
 1. The sound files return a status 'unsupported file type'
 2. The explosion animation does not correctly overlap (in place) for some TBD reason 
-3. There is significant camera distortion during tracking, possibbly due to not converting CV::Point to CGPoint
+3. There is significant camera distortion during tracking, possibly due to not converting CV::Point to CGPoint
