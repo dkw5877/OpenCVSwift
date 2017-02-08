@@ -72,7 +72,7 @@ class ARView: UIView {
 
         //set properties
         center = CGPoint(x:self.frame.size.width / 2.0, y:self.frame.size.height / 2.0)
-        backgroundColor = .darkGray
+        backgroundColor = .clear
 
     }
     

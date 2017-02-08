@@ -25,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eNv-jh-8Oa" userLabel="Tutorial">
-                                <rect key="frame" x="0.0" y="0.0" width="185" height="221"/>
+                                <rect key="frame" x="0.0" y="0.0" width="185" height="220"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="gray" translatesAutoresizingMaskIntoConstraints="NO" id="LxV-lM-pQg">
                                         <rect key="frame" x="0.0" y="0.0" width="185" height="99"/>
@@ -56,7 +56,7 @@
                                 <constraints>
                                     <constraint firstItem="LxV-lM-pQg" firstAttribute="top" secondItem="eNv-jh-8Oa" secondAttribute="top" id="4Hh-L9-URs"/>
                                     <constraint firstItem="LxV-lM-pQg" firstAttribute="top" secondItem="4NI-88-XfY" secondAttribute="bottom" constant="-21" id="4vX-dw-RTI"/>
-                                    <constraint firstAttribute="height" constant="220.5" id="6hm-Ra-yyV"/>
+                                    <constraint firstAttribute="height" constant="220" id="6hm-Ra-yyV"/>
                                     <constraint firstItem="YMe-XJ-NNC" firstAttribute="top" secondItem="eNv-jh-8Oa" secondAttribute="top" constant="20" id="Mj0-nM-hvl"/>
                                     <constraint firstItem="YMe-XJ-NNC" firstAttribute="leading" secondItem="eNv-jh-8Oa" secondAttribute="leading" constant="5" id="PFw-mR-MO3"/>
                                     <constraint firstAttribute="trailing" secondItem="LxV-lM-pQg" secondAttribute="trailing" id="Ztm-CS-Wdf"/>
@@ -176,7 +176,7 @@
                                     <constraint firstAttribute="height" constant="50" id="wNq-2z-xGE"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w0t-Cj-Im5" userLabel="Sample Button Panel">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w0t-Cj-Im5" userLabel="Sample Button Panel">
                                 <rect key="frame" x="0.0" y="612" width="150" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7qh-v5-SDL">

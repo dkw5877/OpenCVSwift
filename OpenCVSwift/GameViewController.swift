@@ -109,10 +109,8 @@ class GameViewController: UIViewController, VideoSourceDelegate {
         if let detector = detector {
             let showSample = detector.useTrackingHelper()
             samplePanel.isHidden = !showSample
-            sampleButtonPanel.isHidden = !showSample
             samplePanel.alpha = 0
         }
-
 
         //we have to add the timer to the runloop as dispatching on main thread does not seem to work
         self.trackingTimer = Timer(timeInterval: 1.0/20.0, target: self, selector: #selector(self.updateTracking(timer:)), userInfo: nil, repeats: true)
@@ -152,7 +150,6 @@ class GameViewController: UIViewController, VideoSourceDelegate {
         scorePanel.alpha = 0
         triggerPanel.alpha = 0
         samplePanel.isHidden = true
-        sampleButtonPanel.isHidden = true
     }
 
     func configureTutorialViews() {
@@ -267,6 +264,7 @@ class GameViewController: UIViewController, VideoSourceDelegate {
     }
 
     func updateTracking(timer:Timer?) {
+
         if ( detector?.isTracking() )! {
             if isTutorialPanelVisible() {
                 togglePanels()
@@ -278,14 +276,12 @@ class GameViewController: UIViewController, VideoSourceDelegate {
                                         y:calibration.yCorrection * matchPoint.y + targetViewHeight / 2.0)
                 arView.show()
             }
-            print("YES: \(detector?.matchValue())")
         }
         else {
             if !isTutorialPanelVisible() {
                 togglePanels()
             }
             arView.hide()
-            print("NO: \(detector?.matchValue())")
         }
     }
 
