@@ -11,8 +11,6 @@
 
 @interface OpenCVWrapper : NSObject
 
-- (void)isThisWorking;
-
 - (UIImage*)toCVMat:(UIImage*)image;
 
 @end

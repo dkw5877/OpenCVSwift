@@ -21,8 +21,12 @@ struct PatternDetectorCPP;
 - (id) initWithPattern:(UIImage*)pattern;
 - (void) dealloc;
 - (bool) isTracking;
+- (CGPoint) matchPoint;
 - (float) matchValue;
+- (float) matchThresholdValue;
 - (void) scanFrame:(VideoFrame)frame;
+- (UIImage*)sampleImage;
+- (bool)useTrackingHelper;
 
 
 @end

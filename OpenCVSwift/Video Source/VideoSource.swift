@@ -33,8 +33,8 @@ class VideoSource:NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
     override init() {
         captureSession = AVCaptureSession()
 
-        if captureSession.canSetSessionPreset(AVCaptureSessionPreset1280x720){
-            captureSession.sessionPreset = AVCaptureSessionPreset1280x720
+        if captureSession.canSetSessionPreset(AVCaptureSessionPreset640x480){
+            captureSession.sessionPreset = AVCaptureSessionPreset640x480
         }
     }
 

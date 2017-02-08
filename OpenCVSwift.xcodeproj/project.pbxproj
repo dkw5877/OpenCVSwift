@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BD5E6238B87BFCF9505EF09F /* Pods_OpenCVSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BB89B8EE761339069054B24 /* Pods_OpenCVSwift.framework */; };
+		CE10C7571E4A880D0029DF8E /* ARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE10C7561E4A880D0029DF8E /* ARView.swift */; };
 		CE2F9DCA1E3817A700359040 /* PatternDetectorWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE2F9DC91E3817A700359040 /* PatternDetectorWrapper.mm */; };
 		CE31D8D81E283C1300708575 /* GROBOLD.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE31D8D71E283C1300708575 /* GROBOLD.ttf */; };
 		CE31D8E01E28495B00708575 /* SpriteLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE31D8DF1E28495B00708575 /* SpriteLayer.swift */; };
@@ -55,6 +56,7 @@
 		8BB89B8EE761339069054B24 /* Pods_OpenCVSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenCVSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0F6E011E36B64800655788 /* PatternDetector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PatternDetector.cpp; path = OpenCV/Detector/PatternDetector.cpp; sourceTree = "<group>"; };
 		CE0F6E021E36B64800655788 /* PatternDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PatternDetector.h; path = OpenCV/Detector/PatternDetector.h; sourceTree = "<group>"; };
+		CE10C7561E4A880D0029DF8E /* ARView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ARView.swift; path = Visualization/ARView.swift; sourceTree = "<group>"; };
 		CE2F9DC81E3817A700359040 /* PatternDetectorWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PatternDetectorWrapper.h; path = OpenCV/Detector/PatternDetectorWrapper.h; sourceTree = "<group>"; };
 		CE2F9DC91E3817A700359040 /* PatternDetectorWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = PatternDetectorWrapper.mm; path = OpenCV/Detector/PatternDetectorWrapper.mm; sourceTree = "<group>"; };
 		CE2F9DCB1E38511A00359040 /* CommonDataStructures.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CommonDataStructures.h; path = OpenCV/Detector/CommonDataStructures.h; sourceTree = "<group>"; };
@@ -142,6 +144,14 @@
 			name = Detector;
 			sourceTree = "<group>";
 		};
+		CE10C7581E4A88170029DF8E /* Visualization */ = {
+			isa = PBXGroup;
+			children = (
+				CE10C7561E4A880D0029DF8E /* ARView.swift */,
+			);
+			name = Visualization;
+			sourceTree = "<group>";
+		};
 		CE31D8E11E28496000708575 /* Sprites */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +234,7 @@
 				CE5F07CF1E25783500BA0206 /* Info.plist */,
 				CE31D8EA1E29879800708575 /* Assets.xcassets */,
 				CE930C511E27085400161956 /* Extensions */,
+				CE10C7581E4A88170029DF8E /* Visualization */,
 			);
 			path = OpenCVSwift;
 			sourceTree = "<group>";
@@ -482,6 +493,7 @@
 			files = (
 				CE31D8E01E28495B00708575 /* SpriteLayer.swift in Sources */,
 				CE4534961E275C9E00D719E3 /* AccelerationAnimation.swift in Sources */,
+				CE10C7571E4A880D0029DF8E /* ARView.swift in Sources */,
 				CE930C551E27147200161956 /* GameViewController.swift in Sources */,
 				CE4534981E27616B00D719E3 /* Evaluate.swift in Sources */,
 				CE4534931E27438500D719E3 /* UIViewExtensions.swift in Sources */,

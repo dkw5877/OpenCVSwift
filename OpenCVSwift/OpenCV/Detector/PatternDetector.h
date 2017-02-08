@@ -12,6 +12,9 @@
 #ifndef __OpenCVTutorial__PatternDetector__
 #define __OpenCVTutorial__PatternDetector__
 
+
+#define kUSE_TRACKING_HELPER 0
+
 class PatternDetector {
 
 #pragma mark Public Interface
@@ -31,6 +34,8 @@ public:
     //Tracking API
     bool isTracking();
 
+    // Peek inside the pattern detector to assist marker tracking
+    const cv::Mat& sampleImage();
 
 #pragma mark Private Members
 private:
@@ -38,6 +43,7 @@ private:
     cv::Mat m_patternImage;
     cv::Mat m_patternImageGray;
     cv::Mat m_patternImageGrayScaled;
+    cv::Mat m_sampleImage;
 
     //Supporting Members
     cv::Point m_matchPoint;

@@ -46,8 +46,8 @@ extension UIView: CAAnimationDelegate {
         }
 
         CATransaction.begin()
-        CATransition.setValue(kCFBooleanFalse, forKey: kCATransactionDisableActions)
-        CATransition.setValue(kAnimationDurationSlideIn, forKey: kCATransactionAnimationDuration)
+        CATransaction.setValue(kCFBooleanFalse, forKey: kCATransactionDisableActions)
+        CATransaction.setValue(kAnimationDurationSlideIn, forKey: kCATransactionAnimationDuration)
         layer.position = CGPoint(x: center.x, y: endY)
 
         let evaluationObject = SecondOrderResponseEvaluator(omega: 20.0, zeta: 0.33)
@@ -83,8 +83,8 @@ extension UIView: CAAnimationDelegate {
         }
 
         CATransaction.begin()
-        CATransition.setValue(kCFBooleanFalse, forKey: kCATransactionDisableActions)
-        CATransition.setValue(kAnimationDurationSlideOut, forKey: kCATransactionAnimationDuration)
+        CATransaction.setValue(kCFBooleanFalse, forKey: kCATransactionDisableActions)
+        CATransaction.setValue(kAnimationDurationSlideOut, forKey: kCATransactionAnimationDuration)
         layer.position = CGPoint(x: center.x, y: endY)
 
         let evaluationObject = ReverseQuadraticEvaluator(a: 0.0, b: 0.35)
@@ -119,6 +119,7 @@ extension UIView: CAAnimationDelegate {
         self.alpha = 1.0
         let animation = generatePopInAnimation()
         animation.delegate = self
+        animation.setValue(kAnimationPopIn, forKey: kAnimationLabel)
         animation.setValue(completion, forKey: kAnimationCompletionBlock)
         self.layer.add(animation, forKey: kAnimationPopIn)
 
@@ -186,12 +187,12 @@ extension UIView: CAAnimationDelegate {
 
     public func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
 
-        let identifer = anim.value(forKey: kAnimationLabel) as! String
+        let identifier = anim.value(forKey: kAnimationLabel) as? String
 
         let completion:CompletionHandlerClosureType = anim.value(forKey: kAnimationCompletionBlock) as! () -> ()
 
         // SlideOut Animation
-        if identifer == kAnimationDirectionFromBottomOutLabel {
+        if identifier == kAnimationDirectionFromBottomOutLabel {
             self.frame = CGRect(x:self.frame.origin.x,
                                 y:self.frame.origin.y - self.frame.size.height,
                                 width:self.frame.size.width,
@@ -199,7 +200,7 @@ extension UIView: CAAnimationDelegate {
             self.alpha = 0.0
         }
 
-        if identifer == kAnimationDirectionFromTopOutLabel {
+        if identifier == kAnimationDirectionFromTopOutLabel {
             self.frame = CGRect(x:self.frame.origin.x,
                                 y:self.frame.origin.y + self.frame.size.height,
                                 width:self.frame.size.width,
@@ -208,8 +209,8 @@ extension UIView: CAAnimationDelegate {
         }
 
         // Pop Animations
-        if  identifer == kAnimationPopOut {
-            if flag{
+        if  identifier == kAnimationPopOut {
+            if flag {
                 self.alpha = 0.0
             }
         }

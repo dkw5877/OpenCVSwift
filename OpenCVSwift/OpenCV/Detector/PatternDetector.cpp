@@ -74,22 +74,33 @@ void PatternDetector::scanFrame(VideoFrame frame) {
             break;
     }
 
-//    std::cout << "match point" << m_matchPoint;
-//    std::cout << "match value" << m_matchValue;
+
+#if kUSE_TRACKING_HELPER
+    // (1) copy image
+    cv::Mat debugImage;
+    queryImageGrayScale.copyTo(debugImage);
+    // (2) overlay rectangle
+    cv::rectangle(debugImage, m_matchPoint, cv::Point(m_matchPoint.x + m_patternImageGrayScaled.cols,m_matchPoint.y + m_patternImageGrayScaled.rows), CV_RGB(0, 0, 0), 3);
+    // (3) save to member variable
+    debugImage.copyTo(m_sampleImage);
+#endif
+
+//    std::cout << "cpp match point" << m_matchPoint;
+//    std::cout << "cpp match value" << m_matchValue;
 }
 
 const cv::Point& PatternDetector::matchPoint() {
-    std::cout << "match point" << m_matchPoint;
+//    std::cout << "cpp match point" << m_matchPoint;
     return m_matchPoint;
 }
 
 float PatternDetector::matchValue() {
-    std::cout << "match value" << m_matchValue;
+//    std::cout << "cpp match value" << m_matchValue;
     return m_matchValue;
 }
 
 float PatternDetector::matchThresholdValue() {
-    std::cout << "match threashold value" << m_matchValue;
+//    std::cout << "cpp match threashold value" << m_matchValue;
     return m_matchThresholdValue;
 }
 
@@ -101,6 +112,10 @@ bool PatternDetector::isTracking() {
         default:
             return m_matchValue > m_matchThresholdValue;
     }
+}
+
+const cv::Mat& PatternDetector::sampleImage() {
+    return m_sampleImage;
 }
 
 

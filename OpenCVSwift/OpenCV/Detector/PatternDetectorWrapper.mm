@@ -45,19 +45,37 @@ struct PatternDetectorCPP {
 
 - (bool)isTracking {
     bool result = detectorWrapper->detector->isTracking();
-    NSLog(@" tracking %i", result);
     return  result;
 }
 
 - (float)matchValue {
     float value = detectorWrapper->detector->matchValue();
-    NSLog(@"match value %f", value);
+    return value;
+}
+
+- (float)matchThresholdValue {
+    float value = detectorWrapper->detector->matchThresholdValue();
+    return value;
+}
+
+- (CGPoint)matchPoint {
+    cv::Point matchPoint = detectorWrapper->detector->matchPoint();
+    CGPoint value = CGPoint{.x = (CGFloat)matchPoint.x, .y = (CGFloat)matchPoint.y};
     return value;
 }
 
 - (void)scanFrame:(VideoFrame)frame {
-//    NSLog(@"frame height:%ld  width:%ld", (long)frame.height, (long)frame.width);
     detectorWrapper->detector->scanFrame(frame);
+}
+
+- (UIImage*)sampleImage {
+    cv::Mat imageMat = detectorWrapper->detector->sampleImage();
+    UIImage* image = MatToUIImage(imageMat);
+    return image;
+}
+
+- (bool)useTrackingHelper {
+    return kUSE_TRACKING_HELPER;
 }
 
 @end

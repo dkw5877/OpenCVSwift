@@ -19,6 +19,15 @@ enum HitPoints:Int {
     case Points5 = 1000
 }
 
+
+struct CameraCalibration {
+    var xDistortion:CGFloat = 0.0
+    var yDistortion:CGFloat = 0.0
+    var xCorrection:CGFloat = 0.0
+    var yCorrection:CGFloat = 0.0
+}
+
+
 class GameViewController: UIViewController, VideoSourceDelegate {
 
     @IBOutlet weak var backgroundImageView: UIImageView!
@@ -50,13 +59,17 @@ class GameViewController: UIViewController, VideoSourceDelegate {
     var soundShoot:SystemSoundID = 1
     var soundTracking:SystemSoundID = 2
 
+    // Transition Closures
+    var transitioningTrackerComplete:CompletionHandlerClosureType = {}
+    var transitioningTrackerCompleteResetScore:CompletionHandlerClosureType = {}
+
     var detector:PatternDetectorWrapper?
     var trackingTimer:Timer?
     var sampleTimer:Timer?
 
-//    var calibration:CameraCalibration
-    var targetViewWidth = 0.0
-    var targetViewHeight = 0.0
+    var calibration:CameraCalibration
+    var targetViewWidth:CGFloat = 0.0
+    var targetViewHeight:CGFloat = 0.0
 
     var fontLarge = UIFont(name: "GROBOLD", size: 18)
     var fontSmall = UIFont(name: "GROBOLD", size: 14)
@@ -68,11 +81,12 @@ class GameViewController: UIViewController, VideoSourceDelegate {
 
     let openCVWrapper = OpenCVWrapper()
     let videoSource = VideoSource()
+    var arView = ARView()
 
     required init?(coder aDecoder: NSCoder) {
         transitioningTracker = false
         transitioningSample = false
-
+        calibration = CameraCalibration(xDistortion: 0.8, yDistortion: 0.675, xCorrection: (16.0/11.0), yCorrection: 1.295238095238095)
         super.init(coder: aDecoder)
     }
 
@@ -92,18 +106,53 @@ class GameViewController: UIViewController, VideoSourceDelegate {
         let trackerImage = UIImage(named: "target.jpg")
         detector = PatternDetectorWrapper(pattern: trackerImage)
 
+        if let detector = detector {
+            let showSample = detector.useTrackingHelper()
+            samplePanel.isHidden = !showSample
+            sampleButtonPanel.isHidden = !showSample
+            samplePanel.alpha = 0
+        }
+
+
         //we have to add the timer to the runloop as dispatching on main thread does not seem to work
         self.trackingTimer = Timer(timeInterval: 1.0/20.0, target: self, selector: #selector(self.updateTracking(timer:)), userInfo: nil, repeats: true)
         RunLoop.current.add(self.trackingTimer!, forMode: .commonModes)
+
+        transitioningTrackerComplete = { [weak self] _ in self?.transitioningTracker = false }
+        transitioningTrackerCompleteResetScore = { [weak self] _ in
+            self?.transitioningTracker = false
+            self?.score = 0
+        }
+
+        createARView(trackerImage: trackerImage)
+    }
+
+    func createARView(trackerImage:UIImage?) {
+        guard let trackerImage = trackerImage else { return }
+        // Create Visualization Layer
+        arView = ARView(size: CGSize(width:trackerImage.size.width, height:trackerImage.size.height), calibration: calibration)
+        view.addSubview(arView)
+        arView.hide()
+
+        // Save Visualization Layer Dimensions
+        targetViewWidth = arView.frame.size.width
+        targetViewHeight = arView.frame.size.height
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        transitioningTracker = true
+        tutorialPanel.slideIn(fromDirection:.AnimationDirectionFromTop, completion: transitioningTrackerComplete)
+        super.viewDidAppear(animated)
     }
 
     func configureViews() {
         // Turn on the game controls
         crosshairs.isHidden = false
-        tutorialPanel.isHidden = false
-        scorePanel.isHidden = false
-        triggerPanel.isHidden = false
+        tutorialPanel.alpha = 0
+        scorePanel.alpha = 0
+        triggerPanel.alpha = 0
         samplePanel.isHidden = true
+        sampleButtonPanel.isHidden = true
     }
 
     func configureTutorialViews() {
@@ -142,19 +191,22 @@ class GameViewController: UIViewController, VideoSourceDelegate {
     @IBAction func pressTrigger(_ sender: Any) {
 
         print("Fire!")
-        let ring = selectRandomRing()
+
+        let targetHit = arView.convert(crosshairs.center, from:self.view)
+        let ring = arView.selectBestRing(point: targetHit)
+
         switch ring {
-        case RingValue.BullsEye: // Bullseye
+        case 5: // Bullseye
             hitTargetWithPoints(points: HitPoints.Points5.rawValue)
-        case RingValue.Fourth:
+        case 4:
             hitTargetWithPoints(points: HitPoints.Points4.rawValue)
-        case RingValue.Third:
+        case 3:
             hitTargetWithPoints(points: HitPoints.Points3.rawValue)
-        case RingValue.Second:
+        case 2:
             hitTargetWithPoints(points: HitPoints.Points2.rawValue)
-        case RingValue.First:
+        case 1: // outermost ring
             hitTargetWithPoints(points: HitPoints.Points1.rawValue)
-        case RingValue.Miss:
+        default:
             missTarget()
         }
     }
@@ -175,12 +227,24 @@ class GameViewController: UIViewController, VideoSourceDelegate {
             }
 
             // Start the timer
-            sampleTimer = Timer.scheduledTimer(timeInterval: 1.0/20.0, target: self, selector: #selector(updateSample(timer:)), userInfo: nil, repeats: true)
+            sampleTimer = Timer.scheduledTimer(timeInterval: 1.0/20.0, target: self, selector: #selector(self.updateSample(timer:)), userInfo: nil, repeats: true)
+            RunLoop.current.add(self.sampleTimer!, forMode: .commonModes)
 
             samplePanel.popIn { [weak self] _ in
                 self?.transitioningSample = false
             }
 
+        }
+    }
+
+    @IBAction func closeSample(_ sender: Any) {
+
+        if isSamplePanelVisible(), !transitioningSample {
+            sampleTimer?.invalidate()
+        }
+
+        samplePanel.popOut {
+            transitioningSample = false
         }
     }
 
@@ -204,20 +268,48 @@ class GameViewController: UIViewController, VideoSourceDelegate {
 
     func updateTracking(timer:Timer?) {
         if ( detector?.isTracking() )! {
+            if isTutorialPanelVisible() {
+                togglePanels()
+            }
+
+            // Begin tracking the bullseye target
+            if let matchPoint = detector?.matchPoint() {
+                arView.center = CGPoint(x:calibration.xCorrection * matchPoint.x + targetViewWidth / 2.0,
+                                        y:calibration.yCorrection * matchPoint.y + targetViewHeight / 2.0)
+                arView.show()
+            }
             print("YES: \(detector?.matchValue())")
         }
         else {
+            if !isTutorialPanelVisible() {
+                togglePanels()
+            }
+            arView.hide()
             print("NO: \(detector?.matchValue())")
         }
     }
 
     func updateSample(timer:Timer?) {
-        // TODO: Add code here
-        print("timer \(timer)")
+        guard timer != nil else { return }
+        sampleView.image = detector?.sampleImage()
+        sampleLabel1.text = String(format: "%0.3f", (detector?.matchThresholdValue())!)
+        sampleLabel2.text = String(format: "%0.3f", (detector?.matchValue())!)
     }
 
     func togglePanels() {
-        // TODO: Add code here
+        if !transitioningTracker {
+            transitioningTracker = true
+            if isTutorialPanelVisible() {
+                tutorialPanel .slideOut(fromDirection: .AnimationDirectionFromTop, completion: transitioningTrackerComplete)
+                scorePanel.slideIn(fromDirection: .AnimationDirectionFromTop, completion: transitioningTrackerComplete)
+                triggerPanel.slideIn(fromDirection: .AnimationDirectionFromBottom, completion: transitioningTrackerComplete)
+                AudioServicesPlaySystemSound(soundTracking)
+            } else {
+                tutorialPanel .slideIn(fromDirection: .AnimationDirectionFromTop, completion: transitioningTrackerComplete)
+                scorePanel.slideOut(fromDirection: .AnimationDirectionFromTop, completion: transitioningTrackerCompleteResetScore)
+                triggerPanel.slideOut(fromDirection: .AnimationDirectionFromBottom, completion: transitioningTrackerComplete)
+            }
+        }
     }
 
     func frameReady(frame:VideoFrame) {
@@ -252,7 +344,7 @@ class GameViewController: UIViewController, VideoSourceDelegate {
         let soundURL3 = Bundle.main.url(forResource: "explosion", withExtension: "caf") 
 
         //In Swift 3, status retuns as unsupported file type, no idea why
-        let status = AudioServicesCreateSystemSoundID(soundURL1 as! CFURL, &soundTracking)
+        AudioServicesCreateSystemSoundID(soundURL1 as! CFURL, &soundTracking)
         AudioServicesCreateSystemSoundID(soundURL2 as! CFURL, &soundShoot)
         AudioServicesCreateSystemSoundID(soundURL3 as! CFURL, &soundExplosion)
 

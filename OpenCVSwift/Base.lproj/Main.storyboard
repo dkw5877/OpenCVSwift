@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -24,17 +24,17 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="50b-pJ-Wmm">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eNv-jh-8Oa" userLabel="Tutorial">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eNv-jh-8Oa" userLabel="Tutorial">
                                 <rect key="frame" x="0.0" y="0.0" width="185" height="221"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="gray" translatesAutoresizingMaskIntoConstraints="NO" id="LxV-lM-pQg">
-                                        <rect key="frame" x="0.0" y="0.5" width="185" height="99"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="185" height="99"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="99" id="8T4-f5-ClN"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="OpenCV Tutorial" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4NI-88-XfY">
-                                        <rect key="frame" x="20" y="115" width="150" height="21"/>
+                                        <rect key="frame" x="20" y="0.0" width="150" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -55,10 +55,10 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="LxV-lM-pQg" firstAttribute="top" secondItem="eNv-jh-8Oa" secondAttribute="top" id="4Hh-L9-URs"/>
+                                    <constraint firstItem="LxV-lM-pQg" firstAttribute="top" secondItem="4NI-88-XfY" secondAttribute="bottom" constant="-21" id="4vX-dw-RTI"/>
                                     <constraint firstAttribute="height" constant="220.5" id="6hm-Ra-yyV"/>
                                     <constraint firstItem="YMe-XJ-NNC" firstAttribute="top" secondItem="eNv-jh-8Oa" secondAttribute="top" constant="20" id="Mj0-nM-hvl"/>
                                     <constraint firstItem="YMe-XJ-NNC" firstAttribute="leading" secondItem="eNv-jh-8Oa" secondAttribute="leading" constant="5" id="PFw-mR-MO3"/>
-                                    <constraint firstItem="4NI-88-XfY" firstAttribute="top" secondItem="YMe-XJ-NNC" secondAttribute="bottom" constant="30" id="VAq-3o-gZv"/>
                                     <constraint firstAttribute="trailing" secondItem="LxV-lM-pQg" secondAttribute="trailing" id="Ztm-CS-Wdf"/>
                                     <constraint firstItem="4NI-88-XfY" firstAttribute="leading" secondItem="eNv-jh-8Oa" secondAttribute="leading" constant="20" id="aZF-G9-Z8o"/>
                                     <constraint firstAttribute="trailing" secondItem="YMe-XJ-NNC" secondAttribute="trailing" id="cTI-8f-7Tq"/>
@@ -91,6 +91,9 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="closeSample:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BNp-rW-yAv"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amW-mU-H6g">
                                         <rect key="frame" x="187" y="66" width="34" height="21"/>
@@ -109,7 +112,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mIq-q9-7zx" userLabel="Score">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mIq-q9-7zx" userLabel="Score">
                                 <rect key="frame" x="225" y="0.0" width="150" height="50"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="gray" translatesAutoresizingMaskIntoConstraints="NO" id="tc2-gA-zID">
@@ -139,7 +142,7 @@
                                     <constraint firstAttribute="width" constant="150" id="CbL-Cm-Nzc"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cdg-dg-nmr" userLabel="Trigger">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cdg-dg-nmr" userLabel="Trigger">
                                 <rect key="frame" x="225" y="612" width="150" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6Z-aI-5JJ">

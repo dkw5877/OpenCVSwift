@@ -16,11 +16,6 @@ using namespace cv;
 
 @implementation OpenCVWrapper
 
-- (void) isThisWorking {
-      cout << "Hey" << endl;
-}
-
-/* these methods are used in place of the category on UIImage */
 //convert UIImage to CV:Mat
 - (UIImage*)toCVMat:(UIImage*)image {
     cv:Mat imageMat;
